@@ -1,78 +1,81 @@
 
+# Intro
+- Rob asked me to talk about Elm
+- it's easy to get lost in the fanciness when talking about yet the next new shiny tech
+- it's easy to like a new tech because it's fun to use
+- but does it actually solve a practical problem?
 
+#
+- After years as JS dev, suddenly I was using exclusively a laguage I barely knew
+    despite how my lack of skill with functional patterns frustrated me
 
+- The only reason I could think of initially was some incoherent (albeit enthusiastic) mumbling about "simpler build pipeline"
 
-# JavaScript has many problems, and many solutions
+- But eventually I discovered the term I was looking for:
 
-Is the problem "too many solutions"?
+# JavaScript Fatigue
 
-Learning CoffeeScript was a breeze.
-
-The problem came when I had to make Karma/Browserify/Istanbul work with Coffee.
-
-
-
-
-
-
-# JavaScript fatigue
-
-My take is that JS Fatigue is not about *learning* new technologies.
-
-We are devs, we go to conferences, we are suckers for new shiny things.
-
-The problem is not *learning* too many things too often.
-**The problem is making these things work together**
-
-
+# What!?
+https://github.com/verekia/js-stack-from-scratch
+12 pages of instruction to wire all the necessary tools together so that we can *start* coding.
+This is JS Fatigue
+It's not because the tools themselves are bad:
+The problem IS MAKING THINGS WORK TOGETHER
 
 
 #
-The good thing about Elm is that, unlike JavaScript, it is an entire language and ecosystem designed with the modern web in mind.
+Maybe it's time to take a step back and reconsider how we do things on the web, break away
 
 
-
-# Show base application
-```
-import Html
-
-main =
-    Html.text "Hello World, you are beutiful!"
-```
+# Ok, what about Elm?
 
 
-# Show
-```
-import Slides exposing (..)
+#
+- minimal example: install elm, dependencies (elm-lang/html), compile directly to html
+-> elm-lang/html does the same stuff as React/Redux
+-> no need for a third party package manager, transpiler (JSX, ES6), bundler
 
-main =
-    program
-        Slides.default
-        ...
-```
+#
+- vs typescript / flow
+- you get immutability
 
-
-# Embed slide inside slide
+- without any type annotation, model defined just by init, nested records, the view tries to access a field with wrong casing: show error message
 
 
+#
+- both are not something patched on top with tape and chewing gum:
+    they are an inherent feature of the language and ITS LIBRARIES
 
+- goodbye "cannot read property blah of undefined"
+-> sometimes it's a pain, but 1) you save a ton of time because you can write less unit tests 2) you don't have to refactor so aggressively, if it compiles it works.
 
-
-# Runtime errors:
-No need for typescript
-
-example without any type annotation: show that elm compiler complains about a typo
-
-`cannot read property xxxxx of undefined`
-`undefined is not a function`
-`assert` everywhere
+-> This has a cost, especially if you  are unfamiliar with fp patterns
+-> but for that cost, you get this:
 https://twitter.com/JuhaKaura/status/791671413526654976
+
+
+# What about testing?
 
 
 
 # ? Elm can be used to replace scass/less/scss
 
 
+
+
+
+
+
+#
+The good thing about Elm is that, unlike JavaScript, it is an entire language and ecosystem designed with the modern web in mind.
+No need for weird workarounds and 7894213 different tools for doing even basic stuff.
+
+# more stuff: enforced semver, enforced docs, readable names, good libraries, easy to interface with js via ports, time travelling debugger
+
+# what's the catch?
+- it's a big change. Don't change unless it solves a problem!
+- can't use many of the oo patterns we learned, need to learn new patterns
+- young ecosystem, you will need to rely on ports
 
 
 
@@ -94,88 +97,6 @@ https://twitter.com/JuhaKaura/status/791671413526654976
 
 
 
-
-
-
-
-
-
-
-
-or: _How many languages, tools and libraries do we need before we can start writing a non-trivial web app?_
-
-languages: Html (, Css
-
-
-
-Es6/7/Babel
-Webpack/Gulp/Grunt
-Angular/React/Reduc/Flux
-Mocha/Sinon/Karma
-lodash/jquery
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Let's go back to 1995
-[image of W95]
-? ()[https://cdn.theatlantic.com/assets/media/img/photo/2015/08/twenty-years-ago-this-week-a-look-b/a01_RTXFTIC/main_1500.jpg]
-Uh, maybe not
-
-
-# ..Let's go back to *when JavaScript was designed*
-Knowing what we know today, what different design choices would we make?
-
-How would JS look like if it was designed with the modern web in mind?
-
-
-
-* modules and dependencies!
-This is why we use:
-    bower/npm to get the packages
-    browserify/webpack/_es6 import_ to glue them together
-
-
-
-
-
-
-
-
-
-
-
-
-
-. What would we want
-
-
-
-
-
-
-
-
-
-* js "as it is" is not very good and manipulating information, usually we'll use lodash
-* lodash from CDN a) is in the global scope and b) needs to load from the www, with all the limits this entails (load time, no offline availability)
-* Ok, so let's use it as a package. -> we need a package manader. and a bundler -> we need a build manager
-* -> we need our test tool to be aware of all of these
 
 
 
