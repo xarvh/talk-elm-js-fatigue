@@ -9,6 +9,8 @@
 - After years as JS dev, suddenly I was using exclusively a laguage I barely knew
     despite how my lack of skill with functional patterns frustrated me
 
+- Elm has a lot of good stuff (no runtime errors, time-travelling debugger...)
+
 - The only reason I could think of initially was some incoherent (albeit enthusiastic) mumbling about "simpler build pipeline"
 
 - But eventually I discovered the term I was looking for:
