@@ -73,12 +73,11 @@ main = Slides.app
 
     , md
         """
-        Integrated type safety
-        -> example with no type declarations
+        Example of a unit test
         """
-
     , md
         """
-        Example of a unit test
+        I'm done.
+        Yes, this presentation is short, but isn't it kind of the whle point?
         """
     ]
