@@ -1,9 +1,8 @@
-module Main exposing (..)
+import Slides exposing (md, mdFragments)
 
-import Slides exposing (..)
 
-main = app
-    slidesDefaultOptions
+main = Slides.app
+    Slides.slidesDefaultOptions
 
     [ md "Elm as an antidote to front-end fatigue"
 
@@ -57,18 +56,29 @@ main = app
         -> show minimal program
 
         -> list all build passages that in JS we'd have to do:
-            - dependency installation
-            - syntax check (usually via linting)
-            - type check
-            - packaging
-            - translation from JSX/ES6/Flow
-            - bundling
-            - (all while trying not to recompile stuff that hasn't changed)
+            - Install all dependencies (Bower/npm/Yarn)
+            - Syntax check (ESLint)
+            - Type check (TypeScript/Flow)
+            - Translate from JSX/ES6/Flow (Babel)
+            - Bundle (Webpack)
+        -> all while trying not to recompile stuff that hasn't changed
         """
+
+    , md
+        """
+        ![build pipeline](build-pipeline.png)
+        """
+        --         -> These are the libs I want to use, this is my code, give me something I can use already
+        --             (very similar to python, node, c
 
     , md
         """
         Integrated type safety
         -> example with no type declarations
+        """
+
+    , md
+        """
+        Example of a unit test
         """
     ]
