@@ -177,7 +177,7 @@ main = Slides.app
             **Elm rethinks the problem from the ground up**
             """
         ,   """
-            *This allows a lot of goodthings to happen*
+            *This allows a lot of good things to happen*
             """
         ]
 
@@ -216,7 +216,7 @@ main = Slides.app
     , md
         """
         I'm done.
-        Yes, this presentation is short, but isn't it kind of the whle point?
+        Yes, this presentation is short, but isn't it kind of the whole point?
         """
     , md
         """
