@@ -1,19 +1,124 @@
-import Slides exposing (md, mdFragments)
+import Slides exposing (md, mdFragments, slidesDefaultOptions)
+import Slides.SlideAnimation as SA
+import Slides.FragmentAnimation as FA
+
+import Css exposing (..)
+import Css.Elements exposing (..)
+
+
+blur completion =
+    "blur(" ++ (toString <| Basics.round <| (1 - completion) * 10) ++ "px)"
+
+
+verticalDeck : SA.Animator
+verticalDeck status =
+    Css.asPairs <|
+        case status of
+            SA.Still ->
+                [ Css.position Css.absolute
+                ]
+
+            SA.Moving direction order completion ->
+                case order of
+                    SA.LaterSlide ->
+                        [ Css.position Css.absolute
+                        , Css.property "z-index" "1"
+                        , Css.property "filter" (blur completion)
+                        , Css.property "-webkit-filter" (blur completion)
+                        ]
+
+                    SA.EarlierSlide ->
+                        [ Css.position Css.absolute
+                        , Css.transform <| Css.translate2 zero (pct (completion * 100))
+                        , Css.property "z-index" "2"
+                        ]
+
+
+
+betterFade : FA.Animator
+betterFade completion =
+    Css.asPairs
+        [ Css.opacity (Css.num completion)
+        , Css.property "filter" (blur completion)
+        , Css.property "-webkit-filter" (blur completion)
+        ]
+
+
+font =
+    px 20
+
+bgColor =
+    rgb 255 255 255
+
+codeBgColor =
+    rgb 230 230 230
+
+txtColor =
+    hex "60B5CC"
+
+elmBlueOnWhite : List Css.Snippet
+elmBlueOnWhite =
+    [ body
+        [ padding zero
+        , margin zero
+        , height (pct 100)
+        , backgroundColor bgColor
+        , color txtColor
+        , fontFamilies [ "calibri", "sans-serif" ]
+        , fontSize font
+        , fontWeight (int 400)
+        ]
+    , h1
+        [ fontWeight (int 400)
+        , fontSize (px 38)
+        ]
+    , section
+        [ height (px 700)
+        , width (pct 100)
+        , backgroundColor bgColor
+        , property "background-position" "center"
+        , property "background-size" "cover"
+        , displayFlex
+        , property "justify-content" "center"
+        , alignItems center
+        ]
+    , (.) "slide-content"
+        [ margin2 zero (px 90)
+        ]
+    , code
+        [ textAlign left
+        , fontSize font
+        , backgroundColor codeBgColor
+        ]
+    , pre
+        [ padding (px 20)
+        , fontSize font
+        , backgroundColor codeBgColor
+        ]
+    , img
+        [ width (pct 100)
+        ]
+    ]
+
 
 
 main = Slides.app
-    Slides.slidesDefaultOptions
+    { slidesDefaultOptions
+        | style = elmBlueOnWhite
+        , slideAnimator = verticalDeck
+        , fragmentAnimator = betterFade
+    }
 
-    [ md "Elm as an antidote to front-end fatigue"
+    [ md "**Elm as an antidote to front-end fatigue**"
 
     , mdFragments
-        [ "**Elm**"
+        [ "**Why Elm?**"
         , "- Guarantees no runtime errors"
         , "- Time-travelling debugger"
         , "- blah blah blah"
         , "- blah"
         , "- yet the *latest* over-hyped tech"
-        , " ... "
+        , "- ... "
         ]
 
     , mdFragments
@@ -29,25 +134,43 @@ main = Slides.app
 
     , mdFragments
         [
-            -- show tutorial
-            --         """
-            --         JS Fatigue
-            -- 
-            --         or: why I need a 10 page tutorial before I can start actually writing my code
-            --         """
+            """
+            Exibit A
+            """
+        ,   """
+            ![Tutorial Header](images/TutorialHeader.png)
+
+            (https://github.com/verekia/js-stack-from-scratch)
+            """
+        ]
+
+    , mdFragments
+        [
+            """
+            ![Tutorial ToC](images/TutorialToC.png)
+            """
+        ,   """
+            **Twelve** pages for the **minimalist setup**...
+            """
+        ,   """
+            ...that's before you can actually **start** writing actual code.
+            """
         ]
 
     , mdFragments
         [ "JavaScript definitions:"
-        , "1. The only language that runs on all browsers"
-        , "2. A jumble of stuff we use to build code that runs on all browsers"
+        , """a) "The only language that runs on all browsers" """
+        , """b) "A jumble of stuff we use to build code that runs on all browsers" """
         ]
 
-    , md
-        """
-        let's rethink stuff
-        we are compiling anyway
-        """
+    , mdFragments
+        [   """
+            We are passing from one language to another.
+            """
+        ,   """
+            Maybe it's time to take a step back and reconsider what we're doing?
+            """
+        ]
 
     , md
         """
@@ -73,11 +196,23 @@ main = Slides.app
 
     , md
         """
+        Is Elm typechecker better than, say, Flow?
+        -> No, Elm type checker is enforced on *all* APIs
+        1. In Flow, you are never 100% sure whether something has been annotated or not
+        2. In Flow, you often don't have annotation for third party code (Hello Relay!)
+        3. It's not like Flow is not good, it is great, but it is limited to what something "added afterwards" can do
+        """
+    , md
+        """
         Example of a unit test
         """
     , md
         """
         I'm done.
         Yes, this presentation is short, but isn't it kind of the whle point?
+        """
+    , md
+        """
+        @xarvh
         """
     ]
