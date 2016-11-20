@@ -172,27 +172,34 @@ main = Slides.app
             """
         ]
 
-    , md
-        """
-        This is what happened with Elm
-
-        -> show minimal program
-
-        -> list all build passages that in JS we'd have to do:
-            - Install all dependencies (Bower/npm/Yarn)
-            - Syntax check (ESLint)
-            - Type check (TypeScript/Flow)
-            - Translate from JSX/ES6/Flow (Babel)
-            - Bundle (Webpack)
-        -> all while trying not to recompile stuff that hasn't changed
-        """
+    , mdFragments
+        [   """
+            **Elm rethinks the problem from the ground up**
+            """
+        ,   """
+            *This allows a lot of goodthings to happen*
+            """
+        ]
 
     , md
         """
-        ![build pipeline](build-pipeline.png)
+        Let's see a fully scalable build
         """
-        --         -> These are the libs I want to use, this is my code, give me something I can use already
-        --             (very similar to python, node, c
+        -- This is very similar to what I'd do in the back end
+        -- There is no equivalent of js fatigue in node (or python, or ruby for that matters)
+
+    , md
+        """
+        Normally we'd have to:
+
+        - Install all dependencies (Bower/npm/Yarn)
+        - Syntax check (ESLint)
+        - Type check (TypeScript/Flow)
+        - Translate from JSX/ES6/Flow (Babel)
+        - Bundle (Webpack)
+
+        ➡ All this while trying to recompile only what has changed
+        """
 
     , md
         """
