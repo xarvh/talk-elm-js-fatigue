@@ -7,7 +7,7 @@ import Css.Elements exposing (..)
 
 
 blur completion =
-    "blur(" ++ (toString <| Basics.round <| (1 - completion) * 10) ++ "px)"
+    "blur(" ++ (toString <| Basics.round <| (1 - completion) * 20) ++ "px)"
 
 
 verticalDeck : SA.Animator
@@ -45,7 +45,7 @@ betterFade completion =
 
 
 font =
-    px 20
+    px 50
 
 bgColor =
     rgb 255 255 255
@@ -70,10 +70,10 @@ elmBlueOnWhite =
         ]
     , h1
         [ fontWeight (int 400)
-        , fontSize (px 38)
+        , fontSize (px 70)
         ]
     , section
-        [ height (px 700)
+        [ height (pct 100)
         , width (pct 100)
         , backgroundColor bgColor
         , property "background-position" "center"
@@ -83,7 +83,7 @@ elmBlueOnWhite =
         , alignItems center
         ]
     , (.) "slide-content"
-        [ margin2 zero (px 90)
+        [ margin2 zero (pct 10)
         ]
     , code
         [ textAlign left
@@ -91,7 +91,7 @@ elmBlueOnWhite =
         , backgroundColor codeBgColor
         ]
     , pre
-        [ padding (px 20)
+        [ padding (pct 20)
         , fontSize font
         , backgroundColor codeBgColor
         ]
@@ -107,6 +107,7 @@ main = Slides.app
         | style = elmBlueOnWhite
         , slideAnimator = verticalDeck
         , fragmentAnimator = betterFade
+        , slidePixelSize = { width = 1600, height = 900 }
     }
 
     [ md "**Elm as an antidote to front-end fatigue**"
