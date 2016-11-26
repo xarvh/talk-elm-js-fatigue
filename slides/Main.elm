@@ -110,7 +110,9 @@ main = Slides.app
         , slidePixelSize = { width = 1600, height = 900 }
     }
 
-    [ md "**Elm as an antidote to front-end fatigue**"
+    [ mdFragments
+        [ "**Elm as an antidote to front-end fatigue**"
+        ]
 
     , mdFragments
         [ "**Why Elm?**"
@@ -123,8 +125,11 @@ main = Slides.app
         ]
 
     , mdFragments
-        [ "The truth is that learning the language was not easy"
-        , "(OOP patterns aren't really useful in FP)"
+        [ """
+          The truth is that learning the language was not easy
+
+          (OOP patterns aren't really useful in FP)
+          """
         , "(Also I'm lazy)"
         ]
 
@@ -149,76 +154,85 @@ main = Slides.app
         [
             """
             ![Tutorial ToC](images/TutorialToC.png)
+
+            *Twelve* pages for a minimalist setup
             """
         ,   """
-            **Twelve** pages for the **minimalist setup**...
-            """
-        ,   """
-            ...that's before you can actually **start** writing actual code.
+            That's before you can actually **start** writing actual code
             """
         ]
 
     , mdFragments
-        [ "JavaScript definitions:"
-        , """a) "The only language that runs on all browsers" """
-        , """b) "A jumble of stuff we use to build code that runs on all browsers" """
+        [ """
+            JavaScript definitions:
+
+            a) "*The only language that runs on all browsers*"
+          """
+        , """
+            b) "*A jumble of workarounds we use to build code that runs on all browsers*"
+          """
         ]
 
     , mdFragments
         [   """
-            We are passing from one language to another.
+            We are compiling anyway, so why stick with JS?
             """
         ,   """
-            Maybe it's time to take a step back and reconsider what we're doing?
+            Maybe it's time to start from scratch?
             """
         ]
 
     , mdFragments
         [   """
             **Elm rethinks the problem from the ground up**
-            """
-        ,   """
-            *This allows a lot of good things to happen*
+
+            ➡ Let's get rid of JS as much as possible
+
+            *This allows a lot of good things to happen...*
             """
         ]
 
-    , md
-        """
-        Let's see a fully scalable build
-        """
-        -- This is very similar to what I'd do in the back end
-        -- There is no equivalent of js fatigue in node (or python, or ruby for that matters)
+    , mdFragments
+        [ "# Good Thing #1: Simpler build"
+        , "➡ Coding becomes much similar to using Node or Python"
+        ]
 
     , md
         """
         Normally we'd have to:
 
-        - Install all dependencies (Bower/npm/Yarn)
-        - Syntax check (ESLint)
-        - Type check (TypeScript/Flow)
-        - Translate from JSX/ES6/Flow (Babel)
-        - Bundle (Webpack)
+        * Install all dependencies (Bower/npm/Yarn)
+        * Syntax check (ESLint)
+        * Type check (TypeScript/Flow)
+        * Translate from JSX/ES6/Flow (Babel)
+        * Bundle (Webpack)
 
         ➡ All this while trying to recompile only what has changed
         """
 
+    , mdFragments
+        [ "# Good Thing #2: Reliable type checking"
+        , " ➡ Elm's typechecker is NOT better than Flow, but:"
+        , " * You always know that 100% of the code is typechecked"
+        , " * This includes ALL third party code"
+        , " * The typechecker becomes *reliable*..."
+        , " * ...and *fast*"
+        ]
+
+    , mdFragments
+        [ "# Good Thing #3: Fewer, simpler tests"
+        , " * The best test is the one you don't have to write"
+        , " * Reliable typechecking kills most integration errors"
+        , " * ...and most API errors"
+        , " * Every function is pure, no need to set up and tear down"
+        , " * No need to configure Karma"
+        ]
+
     , md
         """
-        Is Elm typechecker better than, say, Flow?
-        -> No, Elm type checker is enforced on *all* APIs
-        1. In Flow, you are never 100% sure whether something has been annotated or not
-        2. In Flow, you often don't have annotation for third party code (Hello Relay!)
-        3. It's not like Flow is not good, it is great, but it is limited to what something "added afterwards" can do
+        All of this makes front-end dev much *simpler*
         """
-    , md
-        """
-        Example of a unit test
-        """
-    , md
-        """
-        I'm done.
-        Yes, this presentation is short, but isn't it kind of the whole point?
-        """
+
     , md
         """
         @xarvh
