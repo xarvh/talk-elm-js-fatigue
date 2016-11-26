@@ -212,7 +212,7 @@ main = Slides.app
 
     , mdFragments
         [ "# Good Thing #2: Reliable type checking"
-        , " ➡ Elm's typechecker is NOT better than Flow, but:"
+        , " ➡ Elm's typechecker is NOT better than Flow"
         , " * You always know that 100% of the code is typechecked"
         , " * This includes ALL third party code"
         , " * The typechecker becomes *reliable*..."
@@ -223,7 +223,6 @@ main = Slides.app
         [ "# Good Thing #3: Fewer, simpler tests"
         , " * The best test is the one you don't have to write"
         , " * Reliable typechecking kills most integration errors"
-        , " * ...and most API errors"
         , " * Every function is pure, no need to set up and tear down"
         , " * No need to configure Karma"
         ]
