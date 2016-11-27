@@ -115,7 +115,9 @@ main = Slides.app
         ]
 
     , mdFragments
-        [ "**Why Elm?**"
+        [ "**Elm?**"
+        , "- Purely functional language"
+        , "- Strictly typed"
         , "- Guarantees no runtime errors"
         , "- Time-travelling debugger"
         , "- blah blah blah"
@@ -136,6 +138,18 @@ main = Slides.app
     , mdFragments
         [ "So why stick with Elm?"
         , "**Because front-end JavaScript sucks**"
+        , "(JavaScript under Node.js is more or less OK)"
+        ]
+
+    , mdFragments
+        [ """
+            JavaScript definitions:
+
+            a) "*The only language that runs on all browsers*"
+          """
+        , """
+            b) "*A jumble of workarounds we use to build code that runs on all browsers*"
+          """
         ]
 
     , mdFragments
@@ -163,17 +177,6 @@ main = Slides.app
         ]
 
     , mdFragments
-        [ """
-            JavaScript definitions:
-
-            a) "*The only language that runs on all browsers*"
-          """
-        , """
-            b) "*A jumble of workarounds we use to build code that runs on all browsers*"
-          """
-        ]
-
-    , mdFragments
         [   """
             We are compiling anyway, so why stick with JS?
             """
@@ -188,13 +191,12 @@ main = Slides.app
 
             ➡ Let's get rid of JS as much as possible
 
-            *This allows a lot of good things to happen...*
+            *This allows Good Things to happen...*
             """
         ]
 
     , mdFragments
         [ "# Good Thing #1: Simpler build"
-        , "➡ Coding becomes much similar to using Node or Python"
         ]
 
     , md
@@ -222,7 +224,7 @@ main = Slides.app
     , mdFragments
         [ "# Good Thing #3: Fewer, simpler tests"
         , " * The best test is the one you don't have to write"
-        , " * Reliable typechecking kills most integration errors"
+        , " * Reliable typechecking prevent most run time errors"
         , " * Every function is pure, no need to set up and tear down"
         , " * No need to configure Karma"
         ]
