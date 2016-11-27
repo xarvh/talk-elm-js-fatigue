@@ -98,6 +98,9 @@ elmBlueOnWhite =
     , img
         [ width (pct 100)
         ]
+    , ul
+        [ margin (Css.rem 0.5)
+        ]
     ]
 
 
@@ -111,78 +114,62 @@ main = Slides.app
     }
 
     [ mdFragments
-        [ "**Elm as an antidote to front-end fatigue**"
+        [ """
+          Elm as an antidote to front-end fatigue
+          =======================================
+          """
         ]
 
     , mdFragments
-        [ "**Elm?**"
+        [ "## Elm?"
         , "- Purely functional language"
         , "- Strictly typed"
         , "- Guarantees no runtime errors"
         , "- Time-travelling debugger"
         , "- blah blah blah"
-        , "- blah"
-        , "- yet the *latest* over-hyped tech"
-        , "- ... "
-        ]
-
-    , mdFragments
-        [ """
-          The truth is that learning the language was not easy
-
-          (OOP patterns aren't really useful in FP)
-          """
-        , "(Also I'm lazy)"
+        , "- ...yet the *latest* over-hyped tech"
+        , "Really worth it? (No, it isn't)"
         ]
 
     , mdFragments
         [ "So why stick with Elm?"
         , "**Because front-end JavaScript sucks**"
-        , "(JavaScript under Node.js is more or less OK)"
         ]
 
     , mdFragments
         [ """
-            JavaScript definitions:
+          ![Tutorial Header](images/TutorialHeader.png)
 
-            a) "*The only language that runs on all browsers*"
+          (https://github.com/verekia/js-stack-from-scratch)
+          """
+        ]
+
+    , mdFragments
+        [
+          """
+          ![Tutorial ToC](images/TutorialToC.png)
+
+          *Twelve* pages for a minimalist setup
           """
         , """
-            b) "*A jumble of workarounds we use to build code that runs on all browsers*"
+          That's before you can actually **start** writing actual code
+          """
+        , """
+          Why this doesn't happen, say, with Node?
           """
         ]
 
     , mdFragments
-        [
-            """
-            Exibit A
-            """
-        ,   """
-            ![Tutorial Header](images/TutorialHeader.png)
-
-            (https://github.com/verekia/js-stack-from-scratch)
-            """
+        [ "How did we get here?"
+        , "➡ Because JavaScript is the only thing that runs on all browsers"
+        , "*But is this actually true?*"
+        , "The code that we *actually* write, does NOT run on all browsers"
         ]
 
     , mdFragments
-        [
-            """
-            ![Tutorial ToC](images/TutorialToC.png)
-
-            *Twelve* pages for a minimalist setup
-            """
-        ,   """
-            That's before you can actually **start** writing actual code
-            """
-        ]
-
-    , mdFragments
-        [   """
-            We are compiling anyway, so why stick with JS?
-            """
-        ,   """
-            Maybe it's time to start from scratch?
-            """
+        [ "➡ We are building workarounds on top of other workarounds"
+        , "Maybe it's time to start from scratch?"
+        , "We are compiling anyway, is it worth to stick with JS?"
         ]
 
     , mdFragments
@@ -231,7 +218,7 @@ main = Slides.app
 
     , md
         """
-        All of this makes front-end dev much *simpler*
+        All of this makes front-end dev a *better* experience
         """
 
     , md
