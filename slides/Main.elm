@@ -121,19 +121,7 @@ main = Slides.app
         ]
 
     , mdFragments
-        [ "## Elm?"
-        , "- Purely functional language"
-        , "- Strictly typed"
-        , "- Guarantees no runtime errors"
-        , "- Time-travelling debugger"
-        , "- blah blah blah"
-        , "- ...yet the *latest* over-hyped tech"
-        , "Really worth it? (No, it isn't)"
-        ]
-
-    , mdFragments
-        [ "So why stick with Elm?"
-        , "**Because front-end JavaScript sucks**"
+        [ "**Front-end JavaScript sucks**"
         ]
 
     , mdFragments
@@ -150,20 +138,16 @@ main = Slides.app
           ![Tutorial ToC](images/TutorialToC.png)
 
           *Twelve* pages for a minimalist setup
-          """
-        , """
-          That's before you can actually **start** writing actual code
-          """
-        , """
-          Why this doesn't happen, say, with Node?
+
+          100% boilerplate
           """
         ]
 
     , mdFragments
-        [ "How did we get here?"
+        [ "Why are we stuck with this?"
         , "➡ Because JavaScript is the only thing that runs on all browsers"
-        , "*But is this actually true?*"
-        , "The code that we *actually* write, does NOT run on all browsers"
+        , "*Is this actually true?*"
+        , "The stuff that we *actually* write, does NOT run on all browsers"
         ]
 
     , mdFragments
@@ -173,11 +157,24 @@ main = Slides.app
         ]
 
     , mdFragments
-        [ """
-          ➡ Elm tries to get rid of as much JS as possible
+        [ "## Elm?"
+        , "- Purely functional language"
+        , "- Strictly typed"
+        , "- Guarantees no runtime errors"
+        , "- Time-travelling debugger"
+        , "- Cures cancer"
+        , "- Solves global warming"
+        , "- ...yet the *latest* over-hyped tech"
+        , "Really worth it? (No, it isn't)"
+        ]
 
-          *This allows Good Things to happen...*
-          """
+
+    , mdFragments
+        [ "So why did I stick with Elm?"
+        , "Because Elm tackles the problem from the ground up"
+        , "➡ Elm does NOT try to play nice with JavaScript"
+        , "^ This of obviously comes with a *cost*"
+        , "But it also allows Good Things to happen"
         ]
 
     , mdFragments
@@ -210,8 +207,8 @@ main = Slides.app
         [ "# Good Thing #3: Fewer, simpler tests"
         , " * The best test is the one you don't have to write"
         , " * Reliable typechecking prevent most run time errors"
-        , " * Every function is pure, no need to set up and tear down"
-        , " * No need to configure Karma"
+        , " * Every function is pure, no need to set up and tear down..."
+        , " * ...or configure a fake browser"
         ]
 
     , md
