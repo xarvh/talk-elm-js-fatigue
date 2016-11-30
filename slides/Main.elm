@@ -173,13 +173,11 @@ main = Slides.app
         ]
 
     , mdFragments
-        [   """
-            **Elm rethinks the problem from the ground up**
+        [ """
+          ➡ Elm tries to get rid of as much JS as possible
 
-            ➡ Let's get rid of JS as much as possible
-
-            *This allows Good Things to happen...*
-            """
+          *This allows Good Things to happen...*
+          """
         ]
 
     , mdFragments
